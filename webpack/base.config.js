@@ -13,12 +13,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.js'],
-    alias: {
-      interfaces: path.resolve(__dirname, '../src/game/interfaces'),
-      speed: path.resolve(__dirname, '../src/game/speed'),
-      movement: path.resolve(__dirname, '../src/game/movement'),
-    }
+    extensions: ['.ts', '.js']
   },
 
   plugins: [
