@@ -39,7 +39,7 @@
     "adjacent-overload-signatures": true,
     "member-access": true,
     "only-arrow-functions": true,
-    "prefer-for-of": true,
+    "prefer-for-of": false,
     "typedef": true,
     "no-duplicate-super": true,
     "no-duplicate-variable": true,
