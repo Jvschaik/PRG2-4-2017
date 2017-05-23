@@ -22,3 +22,13 @@
 <li>Zoek hier naar de <b>tslint.json</b> file in de root folder van dit project</li>
 <li>Klik op Apply en OK.</li>
 </ol>
+
+# Snake 
+<ol>
+<li>Klik op Game om het spel te starten</li>
+<li> Stuur de snake met de pijltjes toetsen</li>
+<li>Probeer zoveel mogelijk muizen te pakken zonder af te gaan</li>
+<li>Je bent af als je de muren raakt en jezelf</li>
+<li>Om het spel te herstarten klik je op R</li>
+</ol>
+
