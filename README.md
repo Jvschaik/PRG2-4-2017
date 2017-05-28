@@ -32,3 +32,11 @@
 <li>Om het spel te herstarten klik je op R</li>
 </ol>
 
+
+# Peer Review
+<ol>
+<li>De code is overzichtelijk en duidelijk. Wat mij opvalt is dat je een app en een game class hebt.</li>
+<li>Ik zou daar een class van maken omdat het mij overbodig lijkt. Verder heb je een interface en gebruik je </li>
+<li>overerving en encapsulation. Wat nog mist zijn de singleton class, een static method en stratergy pattern. </li>
+<li>Ten slotte heb je denk ik in de class diagram wat foutjes gemaakt. Je overerft classen die niet overgeerft moeten worden.</li>
+<li>Dit moeten waarschijnlijk pijlen voor associaties zijn. De classen Grid en GridNode moeten nog worden gemaakt</li>
