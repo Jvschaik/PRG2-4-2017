@@ -1,20 +1,19 @@
-import Snake from './snake';
-
+import SnakePart from './snakePart';
 class Moving implements IBehaviour {
 
-    public snake: Snake;
+    public snakePart: SnakePart;
 
-    constructor(s: Snake) {
-        this.snake = s;
-
+    constructor(s: SnakePart) {
+        this.snakePart = s;
     }
-    public move() {
-       this.snake.x += this.snake.speed;
+    public move(): void {
+       this.snakePart.x = Math.floor(this.snakePart.x + this.snakePart.speed) + 1;
+       console.log('part x is ' + this.snakePart.x);
     }
 
-    public onKeyDown() {
+    public onKeyDown(): void {
 
-        this.snake.behaviour = new Moving(this.snake);
+        this.snakePart.move();
     }
 }
 
