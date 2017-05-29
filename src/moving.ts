@@ -2,13 +2,14 @@ import Snake from './snake';
 
 class Moving implements IBehaviour {
 
-    private snake: Snake;
+    public snake: Snake;
 
     constructor(s: Snake) {
         this.snake = s;
 
     }
     public move() {
+       this.snake.x += this.snake.speed;
     }
 
     public onKeyDown() {
@@ -16,3 +17,5 @@ class Moving implements IBehaviour {
         this.snake.behaviour = new Moving(this.snake);
     }
 }
+
+export default Moving;
