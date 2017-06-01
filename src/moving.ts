@@ -8,12 +8,13 @@ class Moving implements IBehaviour {
     }
     public move(): void {
        this.snakePart.x = Math.floor(this.snakePart.x + this.snakePart.speed) + 1;
-       console.log('part x is ' + this.snakePart.x);
+       // console.log('part x is ' + this.snakePart.x);
     }
 
     public onKeyDown(): void {
 
         this.snakePart.move();
+
     }
 }
 

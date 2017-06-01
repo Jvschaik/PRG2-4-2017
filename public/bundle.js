@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1a1c2e80620be902c040"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ca7702749cc5c5f3e315"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -706,7 +706,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(4)(__webpack_require__.s = 4);
+/******/ 	return hotCreateRequire(5)(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -714,11 +714,18 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__snake__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__snake__ = __webpack_require__(3);
 
 class Game {
     constructor() {
         this.snake = new __WEBPACK_IMPORTED_MODULE_0__snake__["a" /* default */]();
+        console.log(this.snake);
+        requestAnimationFrame(() => this.gameLoop());
+    }
+    // loop
+    gameLoop() {
+        this.snake.move();
+        requestAnimationFrame(() => this.gameLoop());
     }
 }
 /* harmony default export */ __webpack_exports__["a"] = Game;
@@ -745,21 +752,19 @@ class GameObject {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__snakePart__ = __webpack_require__(3);
-
-class Snake {
-    constructor() {
-        this.snakePart = [];
-        // make an array with 3 snakeParts
-        for (let i = 0; i < 3; i++) {
-            this.snakePart.push(new __WEBPACK_IMPORTED_MODULE_0__snakePart__["a" /* default */](i === 0, i * -10, 0));
-        }
-        console.log(this.snakePart);
-        // window.addEventListener("keydown", (e: KeyboardEvent) => this.onKeyDown(e));
-        // this.speed = 0;
+class Moving {
+    constructor(s) {
+        this.snakePart = s;
+    }
+    move() {
+        this.snakePart.x = Math.floor(this.snakePart.x + this.snakePart.speed) + 1;
+        console.log('part x is ' + this.snakePart.x);
+    }
+    onKeyDown() {
+        this.snakePart.move();
     }
 }
-/* harmony default export */ __webpack_exports__["a"] = Snake;
+/* harmony default export */ __webpack_exports__["a"] = Moving;
 
 
 /***/ }),
@@ -767,12 +772,51 @@ class Snake {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__snakePart__ = __webpack_require__(4);
+
+class Snake {
+    constructor() {
+        this.snakePartArray = [];
+        // make an array with 3 snakeParts
+        for (let i = 0; i < 3; i++) {
+            this.snakePartArray.push(new __WEBPACK_IMPORTED_MODULE_0__snakePart__["a" /* default */](i === 0, i * -10, 0));
+        }
+        console.log(this.snakePartArray);
+        // window.addEventListener("keydown", (e: KeyboardEvent) => this.onKeyDown(e));
+    }
+    move() {
+        for (let i = 0; i < this.snakePartArray.length; i += 1) {
+            this.snakePartArray[i].move();
+        }
+    }
+}
+/* harmony default export */ __webpack_exports__["a"] = Snake;
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__gameObject__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__moving__ = __webpack_require__(2);
+
 
 class SnakePart extends __WEBPACK_IMPORTED_MODULE_0__gameObject__["a" /* default */] {
     constructor(isHead, x, y) {
         super(x, y); // give constructor an x and y
         this.isHead = isHead; // check if it is an Head or not
+        this.speed = 0.1;
+        this.x = 0;
+        this.y = 120;
+        this.behaviour = new __WEBPACK_IMPORTED_MODULE_1__moving__["a" /* default */](this);
+    }
+    move() {
+        this.behaviour.move();
+        console.log('dit werkt wel/niet');
+    }
+    onKeyDown() {
+        this.behaviour.onKeyDown();
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = SnakePart;
@@ -780,7 +824,7 @@ class SnakePart extends __WEBPACK_IMPORTED_MODULE_0__gameObject__["a" /* default
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -6,7 +6,7 @@ class Snake {
     constructor() {
         // make an array with 3 snakeParts
         for (let i = 0; i < 3; i++) {
-            this.snakePartArray.push(new SnakePart(i === 0, i * -10, 0));
+            this.snakePartArray.push(new SnakePart(i === 0, i * -32, 250));
         }
         console.log(this.snakePartArray);
 
