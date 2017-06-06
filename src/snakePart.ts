@@ -11,7 +11,7 @@ export default class SnakePart extends GameObject {
         super(x, y); // give constructor an x and y
         this.isHead = isHead; // check if it is an Head or not
 
-        this.speed = 0.1;
+        this.speed = 1;
 
         this.behaviour = new Moving(this);
     }
@@ -20,9 +20,5 @@ export default class SnakePart extends GameObject {
         this.behaviour.move();
         super.move();
         // console.log('dit werkt wel/niet');
-    }
-
-    public onKeyDown() {
-        this.behaviour.onKeyDown();
     }
 }

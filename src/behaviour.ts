@@ -1,4 +1,4 @@
 interface IBehaviour {
     move(): void;
-    onKeyDown(): void;
+    onKeyDown(e): void;
 }

@@ -9,11 +9,10 @@ class Snake {
             this.snakePartArray.push(new SnakePart(i === 0, i * -32, 250));
         }
         console.log(this.snakePartArray);
-
-        // window.addEventListener("keydown", (e: KeyboardEvent) => this.onKeyDown(e));
     }
 
     public move(): void {
+        // TODO VERANDEREN IN FOR OF LOOP
         for (let i = 0; i < this.snakePartArray.length; i += 1) {
             this.snakePartArray[i].move();
         }
