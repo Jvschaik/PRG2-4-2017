@@ -10,7 +10,6 @@ export default class SnakePart extends GameObject {
     constructor(isHead: boolean, x: number, y: number) {
         super(x, y); // give constructor an x and y
         this.isHead = isHead; // check if it is an Head or not
-
         this.speed = 1;
 
         this.behaviour = new Moving(this);
