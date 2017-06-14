@@ -12,8 +12,6 @@ class Moving implements IBehaviour {
     }
 
     public move(): void {
-        // this.snakePart.x = Math.floor(this.snakePart.x + this.snakePart.speed) + 1;
-        // console.log('part x is ' + this.snakePart.x);
 
         switch (this.direction) {
             case Direction.Left:
