@@ -32,3 +32,22 @@
 <li>Om het spel te herstarten klik je op R</li>
 </ol>
 
+
+# Beoordeling
+
+De code is op een andere manier dan in de lessen worden gegeven. Misschien komt het door dat je Typescript Lint gebruikt.
+Ik zou de code een beetje houden aan de lessen van school. Voor de rest is wel goed leesbaar en staan geen rare benamingen op.
+
+- Klassendiagram
+
+De classes GridNode en Grid bestaan niet in de src folder, maar staan wel in de klassendiagram.
+Volgens de klassendiagram overerf je bijna alles. Je geeft aan dat Game de class App overerft, Snake de class Game enz.
+Ik denk dat je bedoelt dat de class App een Game heeft en een Game heeft een Snake.
+
+- Onderdelen
+
+Er is een interface, encapsulation en inheritance, maar geen singleton, strategy en static utillity method.
+Ik zou een singleton op de class Game, net als de lessen van school. De rest moet nog gemaakt worden.
+
+
+
